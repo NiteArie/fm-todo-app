@@ -16,3 +16,34 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
 }
+
+/* Main */
+
+.main {
+    position: relative;
+    top: -200px;
+    max-width: 600px;
+    margin: auto auto;
+}
+
+.main__heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.main__heading--dark {
+    color: hsl(0, 0%, 100%);
+}
+
+.main__title {
+    font-size: 40px;
+    font-weight: bold;
+    letter-spacing: 12px;
+}
+
+.main__toggle {
+    background-color: transparent;
+    cursor: pointer;
+    border: 0;
+}
