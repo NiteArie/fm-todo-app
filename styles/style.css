@@ -93,6 +93,10 @@ body {
     border-bottom: 1px solid hsl(234, 11%, 30%);
 }
 
+.todo__item:hover .todo__remove {
+    display: block;
+}
+
 .todo__form {
     display: flex;
     align-items: center;
@@ -133,6 +137,7 @@ body {
 }
 
 .todo__remove {
+    display: none;
     cursor: pointer;
     background-color: transparent;
     border: 0;
