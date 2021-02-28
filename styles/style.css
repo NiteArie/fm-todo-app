@@ -125,6 +125,35 @@ body {
     text-decoration: line-through;
 }
 
+.todo__footer {
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.todo__left {
+    color: hsl(233, 14%, 35%);
+    font-size: 16px;
+}
+
+.todo__options {
+    display: flex;
+}
+
+.todo__option {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.todo__link {
+    color: hsl(234, 11%, 52%);
+    font-size: 16px;
+    text-decoration: none;
+}
+
+.todo__link--active {
+    color: hsl(220, 98%, 61%);
+}
 
 /* Attribution */
 
