@@ -80,6 +80,10 @@ body {
 
 /* Todo */
 
+.todo {
+    border-radius: 5px;
+}
+
 .todo--dark {
     background-color: hsl(235, 24%, 19%);
 }
