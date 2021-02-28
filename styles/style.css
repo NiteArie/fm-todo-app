@@ -96,6 +96,12 @@ body {
 .todo__form {
     display: flex;
     align-items: center;
+    justify-content: space-between;
+}
+
+.todo__show {
+    display: flex;
+    align-items: center;
 }
 
 .todo__checkbox {
@@ -124,6 +130,16 @@ body {
     font-size: 17px;
     margin-left: 20px;
     color:hsl(234, 39%, 85%);
+}
+
+.todo__remove {
+    cursor: pointer;
+    background-color: transparent;
+    border: 0;
+}
+
+.todo__close {
+    filter: brightness(2);
 }
 
 .todo__checkbox:checked ~ .todo__content {
