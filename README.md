@@ -1,5 +1,9 @@
 # fm-todo-app (Todo App)
 
+## Live Preview
+
+Live URL: [https://nitearie.github.io/fm-todo-app/](https://nitearie.github.io/fm-todo-app/)
+
 ## Design Preview
 
 > Desktop Dark
