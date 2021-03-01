@@ -26,11 +26,15 @@
         }
     ];
 
+    var filteredTodos = []
+
     const todoFormElement = document.querySelector(".js-todo-form");
     const todoFormInputElement = document.querySelector(".js-todo-input");
 
     const todoListElement = document.querySelector(".js-todo-list");
     const todoCounterElement = document.querySelector(".js-todo-left");
+
+    const filterActiveTodoElement = document.querySelector(".js-filter-active");
 
     // todoFormElement.addEventListener("submit", (event) => {
     //     event.preventDefault();
@@ -42,13 +46,26 @@
     //     }
     // })
 
-    renderTodos();
+    renderTodos(todos);
     renderTodoCounter();
 
-    function renderTodos() {
+    filterActiveTodoElement.addEventListener("click", (event) => {
+        filteredTodos = todos.filter((todo) => !todo.status );
+
+        console.log(filteredTodos);
+
+        clearTodoElements();
+        renderTodos(filteredTodos);
+    })
+
+    function renderTodos(todos) {
         todos.forEach((todo, index) => {
             todoListElement.appendChild(createTodoElement(todo, index));
         })
+    }
+
+    function clearTodoElements() {
+        todoListElement.textContent = "";
     }
 
     function createTodoElement(todo, index) {
