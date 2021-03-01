@@ -40,9 +40,13 @@
     const todoListElement = document.querySelector(".js-todo-list");
     const todoCounterElement = document.querySelector(".js-todo-left");
 
+    const filterTodoLinkElements = Array.from(document.querySelectorAll(".js-filter"));
     const filterActiveTodoElement = document.querySelector(".js-filter-active");
     const filterCompletedTodoElement = document.querySelector(".js-filter-completed");
     const filterAllTodoElement = document.querySelector(".js-filter-all");
+
+    renderTodos(todos);
+    renderTodoCounter();
 
     todoFormElement.addEventListener("submit", (event) => {
         event.preventDefault();
@@ -58,34 +62,50 @@
             todos = [...todos, todoObject];
 
             renderTodo(todoObject);
+            renderTodoCounter();
         } else {
-            
+
         }
     })
 
-    renderTodos(todos);
-    renderTodoCounter();
 
-    filterActiveTodoElement.addEventListener("click", (event) => {
+    filterActiveTodoElement.addEventListener("click", function (event) {
         filteredTodos = todos.filter((todo) => !todo.status );
 
+        clearActiveFilterLinkElements();
+        activeFilterLinkElement(this);
         clearTodoElements();
         renderTodos(filteredTodos);
     })
 
-    filterCompletedTodoElement.addEventListener("click", (event) => {
+    filterCompletedTodoElement.addEventListener("click", function (event) {
         filteredTodos = todos.filter(todo => todo.status);
 
+        
+        clearActiveFilterLinkElements();
+        activeFilterLinkElement(this);
         clearTodoElements();
         renderTodos(filteredTodos);
     })
 
-    filterAllTodoElement.addEventListener("click", (event) => {
+    filterAllTodoElement.addEventListener("click", function (event) {
         filteredTodos = [...todos];
 
+        clearActiveFilterLinkElements();
+        activeFilterLinkElement(this);
         clearTodoElements();
         renderTodos(filteredTodos);
     })
+
+    function clearActiveFilterLinkElements() {
+        filterTodoLinkElements.forEach((filterTodoLinkElement) => {
+            filterTodoLinkElement.classList.remove("todo__link--active");
+        })
+    }
+
+    function activeFilterLinkElement(linkElement) {
+        linkElement.classList.add("todo__link--active");
+    }
 
     function renderTodo(todo) {
         todoListElement.appendChild(createTodoElement(todo));
@@ -133,6 +153,7 @@
 
         todoCheckBoxElement.addEventListener("change", function (event) {
             updateTodoStatus(todo.id, this.checked);
+            renderTodoCounter();
         })
 
         todoShowElementContainer.append(todoCheckBoxElement, todoLabelElement, todoContentElement);
