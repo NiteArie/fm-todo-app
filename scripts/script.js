@@ -1,5 +1,5 @@
 (() => {
-    const todos = [
+    var todos = [
         {
             id: 1,
             title: "Complete online Javascript course",
@@ -44,15 +44,24 @@
     const filterCompletedTodoElement = document.querySelector(".js-filter-completed");
     const filterAllTodoElement = document.querySelector(".js-filter-all");
 
-    // todoFormElement.addEventListener("submit", (event) => {
-    //     event.preventDefault();
+    todoFormElement.addEventListener("submit", (event) => {
+        event.preventDefault();
 
-    //     let todo = todoFormInputElement.textContent;
+        let todo = todoFormInputElement.value;
 
-    //     if ( todo && todo.trim() != "" ) {
+        if ( todo && todo.trim() != "" ) {
+            let todoObject = {
+                title: todo,
+                status: false,
+            };
 
-    //     }
-    // })
+            todos = [...todos, todoObject];
+
+            renderTodo(todoObject);
+        } else {
+            
+        }
+    })
 
     renderTodos(todos);
     renderTodoCounter();
@@ -77,6 +86,10 @@
         clearTodoElements();
         renderTodos(filteredTodos);
     })
+
+    function renderTodo(todo) {
+        todoListElement.appendChild(createTodoElement(todo));
+    }
 
     function renderTodos(todos) {
         todos.forEach((todo) => {
