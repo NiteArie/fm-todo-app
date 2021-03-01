@@ -30,6 +30,7 @@
     const todoFormInputElement = document.querySelector(".js-todo-input");
 
     const todoListElement = document.querySelector(".js-todo-list");
+    const todoCounterElement = document.querySelector(".js-todo-left");
 
     // todoFormElement.addEventListener("submit", (event) => {
     //     event.preventDefault();
@@ -42,6 +43,7 @@
     // })
 
     renderTodos();
+    renderTodoCounter();
 
     function renderTodos() {
         todos.forEach((todo, index) => {
@@ -85,5 +87,17 @@
         todoItemElement.appendChild(todoFormElement);
 
         return todoItemElement;
+    }
+
+    function renderTodoCounter() {
+        let todoLeftCounter = todos.reduce((accumulator, todo) => {
+            if ( !todo.status ) {
+                return ++accumulator;
+            }
+            return accumulator;
+        }, 0);
+
+        todoCounterElement.textContent = 
+            (todoLeftCounter > 1 ? `${todoLeftCounter} items left` : `${todoLeftCounter} item left`);
     }
 })();
