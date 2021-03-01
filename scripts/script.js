@@ -32,6 +32,8 @@
         }
     ];
 
+    var todoIDCounter = todos.length;
+
     var filteredTodos = []
 
     const todoFormElement = document.querySelector(".js-todo-form");
@@ -54,7 +56,11 @@
         let todo = todoFormInputElement.value;
 
         if ( todo && todo.trim() != "" ) {
+
+            todoIDCounter += 1;
+
             let todoObject = {
+                id: todoIDCounter,
                 title: todo,
                 status: false,
             };
