@@ -35,6 +35,7 @@
     const todoCounterElement = document.querySelector(".js-todo-left");
 
     const filterActiveTodoElement = document.querySelector(".js-filter-active");
+    const filterCompletedTodoElement = document.querySelector(".js-filter-completed");
 
     // todoFormElement.addEventListener("submit", (event) => {
     //     event.preventDefault();
@@ -52,7 +53,12 @@
     filterActiveTodoElement.addEventListener("click", (event) => {
         filteredTodos = todos.filter((todo) => !todo.status );
 
-        console.log(filteredTodos);
+        clearTodoElements();
+        renderTodos(filteredTodos);
+    })
+
+    filterCompletedTodoElement.addEventListener("click", (event) => {
+        filteredTodos = todos.filter(todo => todo.status);
 
         clearTodoElements();
         renderTodos(filteredTodos);
