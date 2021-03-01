@@ -118,12 +118,24 @@
 
         todoCloseElement.src = "../images/icon-cross.svg";
 
+        todoCheckBoxElement.addEventListener("change", function (event) {
+            updateTodoStatus(todo.id, this.checked);
+        })
+
         todoShowElementContainer.append(todoCheckBoxElement, todoLabelElement, todoContentElement);
         todoRemoveElement.appendChild(todoCloseElement);
         todoFormElement.append(todoShowElementContainer, todoRemoveElement);
         todoItemElement.appendChild(todoFormElement);
 
         return todoItemElement;
+    }
+
+    function updateTodoStatus(todoID, status) {
+        let todo = todos.find((todo) => todoID == todo.id);
+        
+        todo.status = status;
+
+        console.log(todos);
     }
 
     function renderTodoCounter() {
