@@ -170,12 +170,24 @@
             renderTodoCounter();
         })
 
+        todoCloseElement.addEventListener("click", (event) => {
+            removeTodo(todo.id);
+        })
+
         todoShowElementContainer.append(todoCheckBoxElement, todoLabelElement, todoContentElement);
         todoRemoveElement.appendChild(todoCloseElement);
         todoFormElement.append(todoShowElementContainer, todoRemoveElement);
         todoItemElement.appendChild(todoFormElement);
 
         return todoItemElement;
+    }
+
+    function removeTodo(todoID) {
+        todos = todos.filter(todo => todo.id != todoID);
+
+        clearTodoElements();
+        renderTodos(todos);
+        renderTodoCounter();
     }
 
     function updateTodoStatus(todoID, status) {
