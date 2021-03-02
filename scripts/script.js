@@ -46,6 +46,7 @@
     const filterActiveTodoElement = document.querySelector(".js-filter-active");
     const filterCompletedTodoElement = document.querySelector(".js-filter-completed");
     const filterAllTodoElement = document.querySelector(".js-filter-all");
+    const clearAllCompletedTodoElement = document.querySelector(".js-clear-completed");
 
     renderTodos(todos);
     renderTodoCounter();
@@ -101,6 +102,13 @@
         activeFilterLinkElement(this);
         clearTodoElements();
         renderTodos(filteredTodos);
+    })
+
+    clearAllCompletedTodoElement.addEventListener("click", (event) => {
+        todos = todos.filter((todo) => !todo.status)
+
+        clearTodoElements();
+        renderTodos(todos);
     })
 
     function clearActiveFilterLinkElements() {
