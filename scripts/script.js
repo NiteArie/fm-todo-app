@@ -63,6 +63,8 @@
 
         if ( todo && todo.trim() != "" ) {
 
+            todoFormInputElement.value = "";
+
             todoIDCounter += 1;
 
             let todoObject = {
