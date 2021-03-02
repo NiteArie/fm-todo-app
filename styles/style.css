@@ -273,3 +273,20 @@ body {
     }
 }
 
+@media only screen and (max-width: 510px) {
+    .todo__footer {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        justify-items: center;
+    }
+
+    .todo__left {
+        flex: 1;
+    }
+
+    .todo__options {
+        margin-top: 15px;
+        order: 1;
+        grid-column: span 2;
+    }
+}
