@@ -199,12 +199,12 @@
         var todoRemoveElement = document.createElement("button");
         var todoCloseElement = document.createElement("img");
 
-        todoItemElement.classList.add("todo__item", "todo__item--dark", "js-theme");
+        todoItemElement.classList.add("todo__item", `todo__item${darkThemeState ? "--dark" : "--light"}`, "js-theme");
         todoFormElement.classList.add("todo__form");
         todoShowElementContainer.classList.add("todo__show");
         todoCheckBoxElement.classList.add("todo__checkbox");
-        todoLabelElement.classList.add("todo__label", "todo__label--dark", "js-theme");
-        todoContentElement.classList.add("todo__content", "todo__content--dark", "js-theme");
+        todoLabelElement.classList.add("todo__label", `todo__label${darkThemeState ? "--dark" : "--light"}`, "js-theme");
+        todoContentElement.classList.add("todo__content", `todo__content${darkThemeState ? "--dark" : "--light"}`, "js-theme");
         todoRemoveElement.classList.add("todo__remove");
         todoCloseElement.classList.add("todo__close");
 
