@@ -262,3 +262,14 @@ body {
 .attribution a {
     color: hsl(228, 45%, 44%);
 }
+
+/* Media Query */
+
+@media only screen and (max-width: 640px) {
+    /* Main */
+
+    .main {
+        margin: auto 20px;
+    }
+}
+
