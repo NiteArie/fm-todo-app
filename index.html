@@ -12,7 +12,7 @@
   <link href="styles/style.css" rel="stylesheet">
 </head>
 
-<body class="body body--dark">
+<body class="body body--dark body--light">
 
   <section class="header">
   </section>
@@ -25,36 +25,37 @@
       </button>
     </section>
 
-    <form class="main__form js-todo-form">
+    <form class="main__form main__form--dark main__form--light js-todo-form">
       <div class="main__circle">
 
       </div>
-      <input class="main__input js-todo-input" type="text" id="todo" name="todo" placeholder="Create a new todo...">
+      <input class="main__input js-todo-input" 
+        type="text" id="todo" name="todo" placeholder="Create a new todo...">
     </form>
 
-    <section class="todo todo--dark">
+    <section class="todo todo--dark todo--light">
       <ul class="todo__list js-todo-list">
       </ul>
       <div class="todo__footer">
-        <p class="todo__left js-todo-left">1 items left</p>
+        <p class="todo__left todo__left--dark todo__left--light js-todo-left">1 items left</p>
         <ul class="todo__options">
           <li class="todo__option">
-            <a class="todo__link todo__link--active todo__link--dark js-filter js-filter-all" href="#">
+            <a class="todo__link todo__link--active todo__link--dark todo__link--light js-filter js-filter-all" href="#">
               All
             </a>
           </li>
           <li class="todo__option">
-            <a class="todo__link todo__link--dark js-filter js-filter-active" href="#">
+            <a class="todo__link todo__link--dark todo__link--light js-filter js-filter-active" href="#">
               Active
             </a>
           </li>
           <li class="todo__option">
-            <a class="todo__link todo__link--dark js-filter js-filter-completed" href="#">
+            <a class="todo__link todo__link--dark todo__link--light js-filter js-filter-completed" href="#">
               Completed
             </a>
           </li>
         </ul>
-        <a href="#" class="todo__link todo__link--dark js-clear-completed">Clear Completed</a>
+        <a href="#" class="todo__link todo__link--dark todo__link--light js-clear-completed">Clear Completed</a>
       </div>
     </section>
   </main>

@@ -13,6 +13,10 @@ body {
     background-color: hsl(235, 21%, 11%);
 }
 
+.body--light {
+    background-color: hsl(0, 0%, 98%);
+}
+
 /* Header */
 
 .header {
@@ -58,8 +62,15 @@ body {
     margin: 30px 0 20px;
     display: flex;
     align-items: center;
-    background-color: hsl(235, 24%, 19%);
     border-radius: 5px;
+}
+
+.main__form--dark {
+    background-color: hsl(235, 24%, 19%);
+}
+
+.main__form--light {
+    background-color: hsl(0, 0%, 100%);
 }
 
 .main__circle {
@@ -92,9 +103,21 @@ body {
     background-color: hsl(235, 24%, 19%);
 }
 
+.todo--light {
+    background-color: hsl(0, 0%, 100%);
+    box-shadow: 0 0 15px hsla(0, 0%, 0%, 0.1);
+}
+
 .todo__item {
     padding: 20px;
+}
+
+.todo__item--dark {
     border-bottom: 1px solid hsl(234, 11%, 30%);
+}
+
+.todo__item--light {
+    border-bottom: 1px solid hsl(236, 33%, 92%);
 }
 
 .todo__item:hover .todo__remove {
@@ -122,8 +145,16 @@ body {
     width: 25px;
     height: 25px;
     border-radius: 50%;
-    border: 1px solid hsl(233, 14%, 35%);
     cursor: pointer;
+}
+
+.todo__label--dark {
+    border: 1px solid hsl(233, 14%, 35%);
+}
+
+
+.todo__label--light {
+    border: 1px solid hsl(233, 11%, 84%);
 }
 
 
@@ -138,7 +169,14 @@ body {
 .todo__content {
     font-size: 17px;
     margin-left: 20px;
+}
+
+.todo__content--dark {
     color:hsl(234, 39%, 85%);
+}
+
+.todo__content--light {
+    color: hsl(235, 19%, 35%);
 }
 
 .todo__remove {
@@ -152,8 +190,13 @@ body {
     filter: brightness(2);
 }
 
-.todo__checkbox:checked ~ .todo__content {
+.todo__checkbox:checked ~ .todo__content--dark {
     color: hsl(234, 11%, 52%);
+    text-decoration: line-through;
+}
+
+.todo__checkbox:checked ~ .todo__content--light {
+    color: hsl(236, 9%, 61%);
     text-decoration: line-through;
 }
 
@@ -164,8 +207,15 @@ body {
 }
 
 .todo__left {
-    color: hsl(233, 14%, 35%);
     font-size: 16px;
+}
+
+.todo__left--dark {
+    color: hsl(233, 14%, 35%);
+}
+
+.todo__left--light {
+    color: hsl(236, 9%, 61%);
 }
 
 .todo__options {
@@ -185,6 +235,10 @@ body {
 
 .todo__link--dark:hover {
     color: hsl(236, 33%, 92%);
+}
+
+.todo__link--light:hover {
+    color: hsl(235, 19%, 35%);
 }
 
 .todo__link--active {
