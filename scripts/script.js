@@ -49,6 +49,7 @@
     const clearAllCompletedTodoElement = document.querySelector(".js-clear-completed");
 
     const themeTogglerElement = document.querySelector(".js-theme-toggler");
+    const themeTogglerIconElement = document.querySelector(".js-theme-toggler-icon");
 
     var darkThemeState = true;
 
@@ -118,6 +119,7 @@
     themeTogglerElement.addEventListener("click", (event) => {
         darkThemeState = !darkThemeState;
 
+
         var themeElements = Array.from(document.querySelectorAll(".js-theme"));
 
         var themeClasses = [];
@@ -149,8 +151,14 @@
         }
 
         if (darkThemeState) {
+
+            themeTogglerIconElement.src = "../images/icon-sun.svg";
+
             changeThemeToTheme("dark");
+
         } else {
+            themeTogglerIconElement.src= "../images/icon-moon.svg";
+
             changeThemeToTheme("light");
         }
     })
