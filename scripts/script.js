@@ -163,6 +163,8 @@
 
         todoContentElement.textContent = todo.title;
 
+        todoRemoveElement.setAttribute("type", "button");
+
         todoCloseElement.src = "../images/icon-cross.svg";
 
         todoCheckBoxElement.addEventListener("change", function (event) {
@@ -170,7 +172,7 @@
             renderTodoCounter();
         })
 
-        todoCloseElement.addEventListener("click", (event) => {
+        todoRemoveElement.addEventListener("click", (event) => {
             removeTodo(todo.id);
         })
 
