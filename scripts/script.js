@@ -48,6 +48,10 @@
     const filterAllTodoElement = document.querySelector(".js-filter-all");
     const clearAllCompletedTodoElement = document.querySelector(".js-clear-completed");
 
+    const themeTogglerElement = document.querySelector(".js-theme-toggler");
+
+    var darkThemeState = true;
+
     renderTodos(todos);
     renderTodoCounter();
 
@@ -111,6 +115,48 @@
         renderTodos(todos);
     })
 
+    themeTogglerElement.addEventListener("click", (event) => {
+        darkThemeState = !darkThemeState;
+
+        var themeElements = Array.from(document.querySelectorAll(".js-theme"));
+
+        var themeClasses = [];
+
+        themeElements.forEach((themeElement) => {
+            let themeClassRegex = /^(\w+)?--(dark|light)$/;
+
+            Array.from(themeElement.classList).forEach((themeElementClass) => {
+                let matchResult = themeElementClass.match(themeClassRegex);
+
+                if (matchResult) {
+                    themeElement.classList.remove(themeElementClass);
+                    themeClasses.push(matchResult[1]);
+                }
+                
+            })
+        });
+
+        function changeThemeToTheme(themeMode) {
+            themeElements.forEach((themeElement) => {
+                
+                themeClasses.forEach((themeClass) => {
+                    if (Array.from(themeElement.classList).includes(themeClass)) {
+                        themeElement.classList.add(`${themeClass}--${themeMode}`);
+                    }
+                })
+    
+            })
+        }
+
+        if (darkThemeState) {
+            changeThemeToTheme("dark");
+        } else {
+            changeThemeToTheme("light");
+        }
+    })
+
+    
+
     function clearActiveFilterLinkElements() {
         filterTodoLinkElements.forEach((filterTodoLinkElement) => {
             filterTodoLinkElement.classList.remove("todo__link--active");
@@ -145,12 +191,12 @@
         var todoRemoveElement = document.createElement("button");
         var todoCloseElement = document.createElement("img");
 
-        todoItemElement.classList.add("todo__item", "todo__item--dark", "todo__item--light");
+        todoItemElement.classList.add("todo__item", "todo__item--dark", "js-theme");
         todoFormElement.classList.add("todo__form");
         todoShowElementContainer.classList.add("todo__show");
         todoCheckBoxElement.classList.add("todo__checkbox");
-        todoLabelElement.classList.add("todo__label", "todo__label--dark", "todo__label--light");
-        todoContentElement.classList.add("todo__content", "todo__content--dark", "todo__content--light");
+        todoLabelElement.classList.add("todo__label", "todo__label--dark", "js-theme");
+        todoContentElement.classList.add("todo__content", "todo__content--dark", "js-theme");
         todoRemoveElement.classList.add("todo__remove");
         todoCloseElement.classList.add("todo__close");
 
