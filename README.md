@@ -10,9 +10,17 @@ Live URL: [https://nitearie.github.io/fm-todo-app/](https://nitearie.github.io/f
 
 ![Desktop Dark Design](./design/desktop-design-dark.jpg)
 
+> Active States Desktop Dark
+
+![Desktop Active State Dark](./design/active-states-dark.jpg)
+
 > Desktop Light
 
 ![Desktop Light Design](./design/desktop-design-light.jpg)
+
+> Active States Desktop Light
+
+![Desktop Active State Light](./design/active-states-light.jpg)
 
 > Mobile Dark
 
