@@ -26,6 +26,10 @@ body {
     background-size: cover;
 }
 
+.header--light {
+    background-image: url("../images/bg-desktop-light.jpg");
+}
+
 /* Main */
 
 .main {
@@ -263,6 +267,18 @@ body {
 }
 
 @media only screen and (max-width: 510px) {
+
+    /* Header */
+
+    .header {
+        background-image: url("../images/bg-mobile-dark.jpg");
+    }
+
+    .header--light {
+        background-image: url("../images/bg-mobile-light.jpg");
+    }
+
+    /* Todo */
     .todo__footer {
         display: grid;
         grid-template-columns: 1fr 1fr;
