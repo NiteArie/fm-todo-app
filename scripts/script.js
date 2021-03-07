@@ -154,12 +154,12 @@
 
         if (darkThemeState) {
 
-            themeTogglerIconElement.src = "../images/icon-sun.svg";
+            themeTogglerIconElement.src = "images/icon-sun.svg";
 
             changeThemeToTheme("dark");
 
         } else {
-            themeTogglerIconElement.src= "../images/icon-moon.svg";
+            themeTogglerIconElement.src= "images/icon-moon.svg";
 
             changeThemeToTheme("light");
         }
