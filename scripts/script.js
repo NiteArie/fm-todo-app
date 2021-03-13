@@ -221,7 +221,7 @@
 
         todoRemoveElement.setAttribute("type", "button");
 
-        todoCloseElement.src = "../images/icon-cross.svg";
+        todoCloseElement.src = "images/icon-cross.svg";
 
         todoCheckBoxElement.addEventListener("change", function (event) {
             updateTodoStatus(todo.id, this.checked);
